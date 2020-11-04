@@ -38,6 +38,22 @@ The task is episodic, and in order to solve the environment, your agent must get
 
 Follow the instructions in `Navigation.ipynb` to get started with training your own agent!  
 
+### To train the agent, I did the following things-
+
+Firstly, I built a Qnetwork used as Q-table. The input to the NN is state
+The output is the q values associate with the 4 action of the agent. The NN is composited by 1 input layer, 1 hidden layer, and 1 output layer.
+
+Secondly, I created an Agent object to represent the "Player". The agent used a fixed q-Targets (local q-table vs. target q-table) strategy, as well as experience Replay, which stores the past SARSA tuples, and sample the training batch from it. The Target Q-table is updated every 4 steps.
+
+Lastly, I built the DQN function, and train the Agent with the Qnetwork.
+
+I reach >13 pts rewards after 400~500 episodes.
+
+
+### To run the code, just run through the cells.
+
+
+
 ### (Optional) Challenge: Learning from Pixels
 
 After you have successfully completed the project, if you're looking for an additional challenge, you have come to the right place!  In the project, your agent learned from information such as its velocity, along with ray-based perception of objects around its forward direction.  A more challenging task would be to learn directly from pixels!
