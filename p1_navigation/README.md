@@ -50,7 +50,7 @@ Lastly, I built the DQN function, and train the Agent with the Qnetwork.
 I reach >13 pts rewards after 400~500 episodes.
 
 
-### To run the code, just run through the cells.
+### To run the code, just run through the cells in `Navigation.ipynb`.
 
 
 
