@@ -4,7 +4,7 @@
 
 # Project 1: Navigation
 
-### Introduction
+## Introduction
 
 For this project, you will train an agent to navigate (and collect bananas!) in a large, square world.  
 
@@ -22,7 +22,7 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
 
 
-### Key Files
+## Key Files
 * Navigation.py: the main routine for the basic-banana project. It is the high-level calls to construct the environment, agent, train and play. 
 * Navigation_Pixels.py: the main routine for the challenge project - visual banana.
 * dqn_agent.py: the class definitions of the agent and replay buffer.
@@ -30,7 +30,7 @@ The task is episodic, and in order to solve the environment, your agent must get
 * model.pth: saved weights for basic banana.
 
 
-### Description of the learning algorithm
+## Description of the learning algorithm
 
 1. Built a QNetwork used as Q-table. The input to the NN is state
 The output is the q values associate with the 4 action of the agent. The NN is composited by 1 input layer, 1 hidden layer, and 1 output layer.
@@ -41,10 +41,10 @@ The output is the q values associate with the 4 action of the agent. The NN is c
 
 The model reached >13 pts rewards after 400~500 episodes.
 
-#### To run the code, just run through the cells in `Navigation.ipynb`.
+### To run the code, just run through the cells in `Navigation.ipynb`.
 
 
-#### Training: DQN and Agent
+## Training: DQN and Agent
 
 The DQN used in this implementation is the simple DQN with two networks: one is local, and one is target.
 
@@ -88,9 +88,9 @@ x = F.relu(self.fc1(state))
 x = F.relu(self.fc2(x))
 x = self.fc3(x)
 ```
-#### Results
+## Results
 
-##### Basic Banana
+### Basic Banana
 
 ```angular2html
 Episode 100	Average Score: 0.42
@@ -104,7 +104,7 @@ Environment solved in 412 episodes!	Average Score: 13.02
 
 ![alt text](./report.jpg)
 
-#### Ideas for future improvements
+### Ideas for future improvements
 
 For future improvements - the challenge project:
 * The agent could be able to achieve higher score if trained longer
@@ -120,7 +120,7 @@ For future improvements - the challenge project:
 1. Install UNITY and ML-Agent following this instruction: 
 [Link](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation.md)
 
-To install Unity on Ubuntu, see this post:
+	To install Unity on Ubuntu, see this post:
 [Link](https://forum.unity.com/threads/unity-on-linux-release-notes-and-known-issues.350256/page-2)
 
 2. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
@@ -135,11 +135,49 @@ To install Unity on Ubuntu, see this post:
 
 3. Place the file in the DRLND GitHub repository, in the `p1_navigation/` folder, and unzip (or decompress) the file. 
 
-### Instructions
+
+### Dependencies
+
+To set up your python environment to run the code in this repository, follow the instructions below.
+
+1. Create (and activate) a new environment with Python 3.6.
+
+	- __Linux__ or __Mac__: 
+	```bash
+	conda create --name drlnd python=3.6
+	source activate drlnd
+	```
+	- __Windows__: 
+	```bash
+	conda create --name drlnd python=3.6 
+	activate drlnd
+	```
+	
+2. Follow the instructions in [this repository](https://github.com/openai/gym) to perform a minimal install of OpenAI gym.  
+	- Next, install the **classic control** environment group by following the instructions [here](https://github.com/openai/gym#classic-control).
+	- Then, install the **box2d** environment group by following the instructions [here](https://github.com/openai/gym#box2d).
+	
+3. Clone the repository (if you haven't already!), and navigate to the `python/` folder.  Then, install several dependencies.
+```bash
+git clone https://github.com/udacity/deep-reinforcement-learning.git
+cd deep-reinforcement-learning/python
+pip install .
+```
+
+4. Create an [IPython kernel](http://ipython.readthedocs.io/en/stable/install/kernel_install.html) for the `drlnd` environment.  
+```bash
+python -m ipykernel install --user --name drlnd --display-name "drlnd"
+```
+
+5. Before running code in a notebook, change the kernel to match the `drlnd` environment by using the drop-down `Kernel` menu. 
+
+
+
+## Instructions
 
 Follow the instructions in `Navigation.ipynb` to get started with training your own agent!  
 
-### (Optional) Challenge: Learning from Pixels [Not Done Yet]
+## (Optional) Challenge: Learning from Pixels [Not Done Yet]
 
 After you have successfully completed the project, if you're looking for an additional challenge, you have come to the right place!  In the project, your agent learned from information such as its velocity, along with ray-based perception of objects around its forward direction.  A more challenging task would be to learn directly from pixels!
 
