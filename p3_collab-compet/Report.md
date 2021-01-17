@@ -31,7 +31,7 @@ Since every entry in the action must be a number between -1 and 1 we add a tanh 
 The both actor and critic networks have 2 hidden layers with 200 and 150 units . 
 Actions are included before the 1nd hidden layer of critic network. The final layer weights and biases of both the actor and critic networks are initialized from a uniform distribution [-3e-3, 3e-3] to provide the initial outputs for the policy and value estimates are near zero. 
 The other layers are initialized from uniform distributions [-1/<span class="radic"><sup><var></var></sup>√</span><span class="radicand"><var>f</var></span>, 1/<span class="radic"><sup><var></var></sup>√</span><span class="radicand"><var>f</var></span>] where *f* is the fan-in of the layer. 
-We train during 5000 episodes with minibatch sizes (`BATCH_SIZE`) of 256 and use a replay buffer size (`BUFFER_SIZE`) of 1e+5.
+We train during 5000 episodes with minibatch sizes (`BATCH_SIZE`) of 250 and use a replay buffer size (`BUFFER_SIZE`) of 1e+5.
 For the exploration noise process we use an *Ornstein-Uhlenbeck process* with &theta; = 0.15 and &sigma; = 0.2, and agent-dependent noise decay factor ``NOISE_DECAY_MULTIPLIER`` = 0.9999.
 ## Performance
 It was very difficult to get the performance improve over time. The biggest problem was that my average score gets stuck and would not improve within the first 20 episodes and won't improve. Here are some of the things i tried:
