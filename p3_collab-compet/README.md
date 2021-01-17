@@ -23,9 +23,36 @@ The task is episodic, and in order to solve the environment, your agents must ge
 
 The environment is considered solved, when the average (over 100 episodes) of those **scores** is at least +0.5.
 
-### Getting Started
 
-1. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
+### Key Files
+
+- Tennis.ipynb: the main routine for the project. It is the high-level calls to construct the environment, agent, train and play.
+- MADDPG.py: the class definitions of the Multi-Agent and replay buffer.
+- model.py: the deep neural network models of Arctic and Critic are defined in this file.
+- workspace_utils.py: a helper function to facilite the workspace training on Udacity.
+- ``agent1_checkpoint_actor.pth`` & ``agent2_checkpoint_actor.pth``: model parameters for actors' NN.
+- ``agent1_checkpoint_critic.pth`` & ``agent2_checkpoint_critic.pth``: model parameters for critics' NN.
+
+### Getting Started
+1. Install UNITY and ML-Agent following this instruction: 
+[Link](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation.md)
+
+	To install Unity on Ubuntu, see this post:
+[Link](https://forum.unity.com/threads/unity-on-linux-release-notes-and-known-issues.350256/page-2)
+
+
+2. To run this project you need to set up your conda environment as follows.  
+
+	```
+	buildoutcfg
+	conda create python=3.6 -n unity
+	conda activate unity
+	conda install numpy, pytorch
+	pip install unityagents
+	pip install mlagents
+	```
+
+3. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
     - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
     - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
     - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86.zip)
